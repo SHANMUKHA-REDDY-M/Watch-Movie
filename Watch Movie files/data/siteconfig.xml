@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<siteconfig>
+  <siteName>Watch Movies</siteName>
+  <currency>INR</currency>
+  <taxPercent>5</taxPercent>
+  <serviceFee>10</serviceFee>
+  <contactEmail>support@watchmovies.com</contactEmail>
+  <theme>dark</theme>
+  <version>1.0.0</version>
+</siteconfig>

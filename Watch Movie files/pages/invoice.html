@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Watch Movies | Ticket Invoice</title>
+  <link rel="icon" href="../assets/favicon.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../assets/logo.png" alt="Watch Movies Logo" />
+      <h1>Watch Movies</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="invoice.html" class="active">Invoice</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main class="container" style="padding:2rem 0;">
+    <section>
+      <h2>Your Movie Ticket Invoice</h2>
+      <p>Download or print your e-ticket below.</p>
+
+      <div id="invoiceContainer" class="card" style="margin-top:1rem;padding:1rem;">
+        <!-- JS will populate ticket invoice details here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Watch Movies | All Rights Reserved.</p>
+  </footer>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/invoice.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('invoiceContainer');
+      const bookings = JSON.parse(localStorage.getItem('wm_bookings')) || [];
+
+      if (!bookings.length) {
+        container.innerHTML = '<p>No invoice available. Book a ticket to generate one.</p>';
+        return;
+      }
+
+      const latest = bookings[bookings.length - 1];
+      container.innerHTML = `
+        <div style="background:#fff;border-radius:8px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+          <h3 style="margin-bottom:0.5rem;">${latest.movie}</h3>
+          <p><strong>Theatre:</strong> ${latest.theatre}</p>
+          <p><strong>Date:</strong> ${latest.date} | <strong>Time:</strong> ${latest.time}</p>
+          <p><strong>Seats:</strong> ${Array.isArray(latest.seats) ? latest.seats.join(', ') : latest.seats}</p>
+          <p><strong>Amount Paid:</strong> ₹${latest.amount}</p>
+          <p><strong>Transaction ID:</strong> ${latest.txnId || 'TXN' + Date.now()}</p>
+          <hr style="margin:1rem 0;">
+          <button class="btn" onclick="generateTicket('${latest.id}')">View / Print Ticket</button>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>

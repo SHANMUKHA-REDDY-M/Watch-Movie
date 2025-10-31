@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "movieId": 1,
+    "user": "Rahul Verma",
+    "rating": 5,
+    "comment": "Amazing experience! Totally worth it!",
+    "date": "2025-10-25"
+  },
+  {
+    "id": 2,
+    "movieId": 3,
+    "user": "Priya Singh",
+    "rating": 4.7,
+    "comment": "Mind-blowing concept and visuals!",
+    "date": "2025-10-28"
+  }
+]

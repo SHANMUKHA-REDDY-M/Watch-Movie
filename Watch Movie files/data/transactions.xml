@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transactions>
+  <transaction id="TXN1001">
+    <bookingId>B001</bookingId>
+    <amount>750</amount>
+    <method>UPI</method>
+    <status>success</status>
+    <timestamp>2025-11-02T12:45:00</timestamp>
+  </transaction>
+
+  <transaction id="TXN1002">
+    <bookingId>B002</bookingId>
+    <amount>500</amount>
+    <method>Credit Card</method>
+    <status>refund issued</status>
+    <timestamp>2025-10-31T10:30:00</timestamp>
+  </transaction>
+</transactions>

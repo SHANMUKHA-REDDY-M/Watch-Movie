@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watch Movies | My Bookings</title>
+  <link rel="icon" href="../../assets/favicon.png" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/responsive.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="Watch Movies Logo" />
+      <h1>Watch Movies</h1>
+    </div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../movies.html">Movies</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="bookings.html" class="active">My Bookings</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>My Bookings</h2>
+    <div id="bookingsList" class="booking-list"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 Watch Movies | All Rights Reserved.</p>
+  </footer>
+
+  <script src="../../js/utils.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const list = document.getElementById("bookingsList");
+      const bookings = JSON.parse(localStorage.getItem("wm_bookings")) || [];
+
+      if (!bookings.length) {
+        list.innerHTML = "<p>You haven’t booked any movies yet 🎬</p>";
+        return;
+      }
+
+      bookings.forEach(b => {
+        const div = document.createElement("div");
+        div.classList.add("booking-card");
+        div.innerHTML = `
+          <h4>${b.movie}</h4>
+          <p>${b.theatre}</p>
+          <p>Date: ${b.date} | Time: ${b.time}</p>
+          <p>Seats: ${Array.isArray(b.seats) ? b.seats.join(", ") : b.seats}</p>
+          <p>Amount Paid: ₹${b.amount}</p>
+          <button class="btn" onclick="window.location.href='../invoice.html'">View Invoice</button>
+        `;
+        list.appendChild(div);
+      });
+    });
+  </script>
+</body>
+</html>

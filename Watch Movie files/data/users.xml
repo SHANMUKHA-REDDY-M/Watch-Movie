@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+  <user id="U001" role="customer">
+    <name>Rahul Sharma</name>
+    <email>rahul@example.com</email>
+    <password>hashed_password_1</password>
+    <phone>9876543210</phone>
+  </user>
+
+  <user id="U002" role="admin">
+    <name>Admin</name>
+    <email>admin@watchmovies.com</email>
+    <password>hashed_admin_pass</password>
+    <phone>9000000000</phone>
+  </user>
+
+  <user id="U003" role="theatre_owner">
+    <name>Ramesh Kumar</name>
+    <email>ramesh@inox.com</email>
+    <password>hashed_password_3</password>
+    <phone>9865421010</phone>
+  </user>
+</users>

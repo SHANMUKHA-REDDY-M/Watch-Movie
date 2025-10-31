@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Watch Movies | Theatre Dashboard</title>
+  <link rel="icon" href="../../assets/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="Watch Movies Logo">
+      <h1>Theatre Dashboard</h1>
+    </div>
+    <nav>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="manage-movie.html">Manage Movies</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="../login.html">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Welcome, Theatre Partner 🎬</h2>
+
+    <section class="grid-3">
+      <div class="card"><h3>Total Movies</h3><p id="movieCount">0</p></div>
+      <div class="card"><h3>Total Bookings</h3><p id="bookingCount">0</p></div>
+      <div class="card"><h3>Total Revenue</h3><p id="revenue">₹0</p></div>
+    </section>
+
+    <section style="margin-top:2rem;">
+      <h3>Recent Bookings</h3>
+      <table class="styled-table" id="recentBookings">
+        <thead><tr><th>ID</th><th>Movie</th><th>User</th><th>Seats</th><th>Amount</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Watch Movies | Theatre Panel</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const movies = JSON.parse(localStorage.getItem("wm_movies")) || [];
+      const bookings = JSON.parse(localStorage.getItem("wm_bookings")) || [];
+
+      document.getElementById("movieCount").innerText = movies.length;
+      document.getElementById("bookingCount").innerText = bookings.length;
+
+      const total = bookings.reduce((a, b) => a + b.amount, 0);
+      document.getElementById("revenue").innerText = `₹${total}`;
+
+      const tbody = document.querySelector("#recentBookings tbody");
+      bookings.slice(-5).reverse().forEach(b => {
+        tbody.insertAdjacentHTML("beforeend", `
+          <tr>
+            <td>${b.id}</td>
+            <td>${b.movie}</td>
+            <td>${b.user}</td>
+            <td>${b.seats}</td>
+            <td>₹${b.amount}</td>
+          </tr>
+        `);
+      });
+    });
+  </script>
+</body>
+</html>

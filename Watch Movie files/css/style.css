@@ -1,0 +1,61 @@
+/* style.css — Main layout and structure */
+
+header {
+  background: var(--bg-light);
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: var(--text);
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  color: var(--primary);
+}
+
+.hero {
+  background: url("../assets/premier-banner.jpg") no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 8px black;
+}
+
+footer {
+  text-align: center;
+  background: var(--bg-light);
+  color: #ccc;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Watch Movies | Theatre Bookings</title>
+  <link rel="icon" href="../../assets/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/components.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="Watch Movies Logo">
+      <h1>Theatre Bookings</h1>
+    </div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="manage-movie.html">Manage Movies</a>
+      <a href="bookings.html" class="active">Bookings</a>
+      <a href="../login.html">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Recent Bookings</h2>
+    <table class="styled-table" id="bookingTable">
+      <thead><tr><th>ID</th><th>Movie</th><th>User</th><th>Seats</th><th>Amount</th><th>Status</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <footer><p>© 2025 Watch Movies | Theatre Panel</p></footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const bookings = JSON.parse(localStorage.getItem("wm_bookings")) || [];
+      const tbody = document.querySelector("#bookingTable tbody");
+      bookings.forEach(b => {
+        tbody.insertAdjacentHTML("beforeend", `
+          <tr>
+            <td>${b.id}</td>
+            <td>${b.movie}</td>
+            <td>${b.user}</td>
+            <td>${b.seats}</td>
+            <td>₹${b.amount}</td>
+            <td>${b.status || "Confirmed"}</td>
+          </tr>
+        `);
+      });
+    });
+  </script>
+</body>
+</html>

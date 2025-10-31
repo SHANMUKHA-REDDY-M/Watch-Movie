@@ -1,0 +1,30 @@
+/* responsive.css — Media queries for all screen sizes */
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .card img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  header .logo {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  .btn {
+    padding: 8px 14px;
+  }
+}

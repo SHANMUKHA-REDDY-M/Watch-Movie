@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<siteconfig>
+    <general>
+        <sitename>Watch Movies</sitename>
+        <tagline>Book Tickets Instantly. Experience Movies Seamlessly.</tagline>
+        <baseurl>https://watchmovies.com</baseurl>
+        <supportemail>support@watchmovies.com</supportemail>
+        <timezone>Asia/Kolkata</timezone>
+        <theme>dark</theme>
+        <version>1.0.0</version>
+    </general>
+
+    <currency>
+        <symbol>₹</symbol>
+        <code>INR</code>
+        <tax>0.18</tax> <!-- 18% GST -->
+        <convenienceFee>25</convenienceFee>
+        <refundCharge>10</refundCharge>
+    </currency>
+
+    <payment>
+        <methods>
+            <method>Credit Card</method>
+            <method>Debit Card</method>
+            <method>UPI</method>
+            <method>Net Banking</method>
+            <method>Wallet</method>
+        </methods>
+        <gateway>
+            <mock>true</mock>
+            <provider>PaySim</provider>
+            <apiKey>WM-TEST-API-2025</apiKey>
+            <callback>https://watchmovies.com/payment/verify</callback>
+        </gateway>
+    </payment>
+
+    <limits>
+        <maxSeatsPerBooking>10</maxSeatsPerBooking>
+        <maxBookingsPerUser>5</maxBookingsPerUser>
+        <refundWindowHours>2</refundWindowHours>
+        <reviewLengthLimit>300</reviewLengthLimit>
+    </limits>
+
+    <features>
+        <enableCoupons>true</enableCoupons>
+        <enableEmailAlerts>true</enableEmailAlerts>
+        <enableSMSAlerts>false</enableSMSAlerts>
+        <enableRecommendations>true</enableRecommendations>
+        <enableDarkMode>true</enableDarkMode>
+    </features>
+
+    <admin>
+        <name>M Shanmukha Reddy</name>
+        <email>admin@watchmovies.com</email>
+        <phone>+91-8374902580</phone>
+    </admin>
+</siteconfig>

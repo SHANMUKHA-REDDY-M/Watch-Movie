@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch Movies | Booking</title>
+  <link rel="icon" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../assets/logo.png" alt="Watch Movies Logo">
+      <h1>Watch Movies</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <section class="booking-section">
+    <h2>Book Your Seat</h2>
+    <div class="booking-container">
+      <div class="movie-info">
+        <h3 id="movieName">Movie Title</h3>
+        <p><strong>Theatre:</strong> <span id="theatreName">Nexus Cinemas</span></p>
+        <p><strong>Show Time:</strong> <span id="showTime">7:30 PM</span></p>
+      </div>
+
+      <div class="seat-layout">
+        <h4>Select Your Seats</h4>
+        <div id="seatContainer" class="seats"></div>
+      </div>
+
+      <div class="booking-summary">
+        <h4>Booking Summary</h4>
+        <p>Selected Seats: <span id="selectedSeats">None</span></p>
+        <p>Total Price: ₹<span id="totalPrice">0</span></p>
+        <button id="proceedPayment" class="btn-primary">Proceed to Payment</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Watch Movies | All Rights Reserved.</p>
+  </footer>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/booking.js"></script>
+</body>
+</html>

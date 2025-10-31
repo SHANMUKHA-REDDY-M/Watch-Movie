@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Watch Movies | Manage Movies</title>
+  <link rel="icon" href="../../assets/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/forms.css">
+  <link rel="stylesheet" href="../../css/components.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="Watch Movies Logo">
+      <h1>Manage Movies</h1>
+    </div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="manage-movie.html" class="active">Manage Movies</a>
+      <a href="bookings.html">Bookings</a>
+      <a href="../login.html">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Add New Movie</h2>
+
+    <form id="addMovieForm" class="styled-form">
+      <input type="text" id="movieName" placeholder="Movie Name" required>
+      <input type="text" id="genre" placeholder="Genre" required>
+      <input type="number" id="price" placeholder="Ticket Price (₹)" required>
+      <input type="text" id="poster" placeholder="Poster Image URL" required>
+      <button type="submit">Add Movie</button>
+    </form>
+
+    <section style="margin-top:2rem;">
+      <h3>Movie List</h3>
+      <table class="styled-table" id="movieTable">
+        <thead><tr><th>ID</th><th>Name</th><th>Genre</th><th>Price</th><th>Action</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer><p>© 2025 Watch Movies | Theatre Panel</p></footer>
+
+  <script>
+    const key = "wm_movies";
+
+    const getMovies = () => JSON.parse(localStorage.getItem(key)) || [];
+    const saveMovies = (data) => localStorage.setItem(key, JSON.stringify(data));
+
+    const renderMovies = () => {
+      const tbody = document.querySelector("#movieTable tbody");
+      const movies = getMovies();
+      tbody.innerHTML = "";
+      movies.forEach(m => {
+        tbody.insertAdjacentHTML("beforeend", `
+          <tr>
+            <td>${m.id}</td><td>${m.name}</td><td>${m.genre}</td><td>₹${m.price}</td>
+            <td><button onclick="deleteMovie(${m.id})">Delete</button></td>
+          </tr>
+        `);
+      });
+    };
+
+    const deleteMovie = (id) => {
+      const movies = getMovies().filter(m => m.id !== id);
+      saveMovies(movies);
+      renderMovies();
+    };
+
+    document.getElementById("addMovieForm").addEventListener("submit", e => {
+      e.preventDefault();
+      const movie = {
+        id: Date.now(),
+        name: movieName.value,
+        genre: genre.value,
+        price: +price.value,
+        poster: poster.value
+      };
+      const movies = getMovies();
+      movies.push(movie);
+      saveMovies(movies);
+      e.target.reset();
+      renderMovies();
+    });
+
+    document.addEventListener("DOMContentLoaded", renderMovies);
+  </script>
+</body>
+</html>

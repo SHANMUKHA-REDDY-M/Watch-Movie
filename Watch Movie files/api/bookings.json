@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1001,
+    "userId": 2,
+    "movieId": 1,
+    "theatre": "PVR Cinemas",
+    "seats": ["A1", "A2"],
+    "showtime": "6:30 PM",
+    "date": "2025-11-01",
+    "amount": 500,
+    "status": "confirmed"
+  },
+  {
+    "id": 1002,
+    "userId": 2,
+    "movieId": 3,
+    "theatre": "INOX Galleria",
+    "seats": ["B5"],
+    "showtime": "4:00 PM",
+    "date": "2025-11-03",
+    "amount": 280,
+    "status": "confirmed"
+  }
+]

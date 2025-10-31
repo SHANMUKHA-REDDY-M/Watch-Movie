@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Watch Movies | Transactions</title>
+  <link rel="icon" href="../../assets/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="Watch Movies Logo">
+      <h1>Transactions</h1>
+    </div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="users.html">Users</a>
+      <a href="transactions.html" class="active">Transactions</a>
+      <a href="../login.html">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Payment Transactions</h2>
+    <table class="styled-table" id="txnTable">
+      <thead>
+        <tr><th>ID</th><th>User</th><th>Amount</th><th>Method</th><th>Status</th><th>Date</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>© 2025 Watch Movies | Admin Panel</p>
+  </footer>
+
+  <script src="../../js/utils.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const txns = JSON.parse(localStorage.getItem('wm_transactions')) || [];
+      const tbody = document.querySelector('#txnTable tbody');
+      txns.forEach(t => {
+        const row = `
+          <tr>
+            <td>${t.id}</td>
+            <td>${t.user}</td>
+            <td>₹${t.amount}</td>
+            <td>${t.method}</td>
+            <td>${t.status}</td>
+            <td>${t.date}</td>
+          </tr>`;
+        tbody.insertAdjacentHTML('beforeend', row);
+      });
+    });
+  </script>
+</body>
+</html>

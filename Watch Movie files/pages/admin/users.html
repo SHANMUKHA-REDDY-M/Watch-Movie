@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Watch Movies | Manage Users</title>
+  <link rel="icon" href="../../assets/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="Watch Movies Logo">
+      <h1>Manage Users</h1>
+    </div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="users.html" class="active">Users</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="../login.html">Logout</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Registered Users</h2>
+    <table class="styled-table" id="userTable">
+      <thead>
+        <tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Action</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>© 2025 Watch Movies | Admin Panel</p>
+  </footer>
+
+  <script src="../../js/utils.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const users = JSON.parse(localStorage.getItem('wm_users')) || [];
+      const tbody = document.querySelector('#userTable tbody');
+
+      users.forEach(u => {
+        const row = `
+          <tr>
+            <td>${u.id}</td>
+            <td>${u.name}</td>
+            <td>${u.email}</td>
+            <td>${u.role}</td>
+            <td>${u.status || 'Active'}</td>
+            <td><button onclick="toggleStatus(${u.id})">${u.status === 'Blocked' ? 'Unblock' : 'Block'}</button></td>
+          </tr>`;
+        tbody.insertAdjacentHTML('beforeend', row);
+      });
+    });
+
+    function toggleStatus(id) {
+      let users = JSON.parse(localStorage.getItem('wm_users')) || [];
+      users = users.map(u => {
+        if (u.id === id) {
+          u.status = u.status === 'Blocked' ? 'Active' : 'Blocked';
+        }
+        return u;
+      });
+      localStorage.setItem('wm_users', JSON.stringify(users));
+      location.reload();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+/* forms.css — Inputs and form styling */
+
+form {
+  background: var(--bg-light);
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: 0 3px 8px var(--shadow);
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #555;
+  border-radius: var(--radius);
+  background: #222;
+  color: white;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+label {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: var(--accent);
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookings>
+  <booking id="B001">
+    <userId>U001</userId>
+    <theatreId>T001</theatreId>
+    <movie>Inception</movie>
+    <seats>3</seats>
+    <totalAmount>750</totalAmount>
+    <date>2025-11-02</date>
+    <status>confirmed</status>
+  </booking>
+
+  <booking id="B002">
+    <userId>U001</userId>
+    <theatreId>T002</theatreId>
+    <movie>Interstellar</movie>
+    <seats>2</seats>
+    <totalAmount>500</totalAmount>
+    <date>2025-10-30</date>
+    <status>cancelled</status>
+  </booking>
+</bookings>

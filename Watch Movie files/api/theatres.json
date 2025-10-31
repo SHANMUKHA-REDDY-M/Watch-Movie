@@ -1,0 +1,53 @@
+[
+  {
+    "id": 101,
+    "name": "PVR Cinemas",
+    "location": "Inorbit Mall, Hyderabad",
+    "city": "Hyderabad",
+    "screens": 5,
+    "facilities": ["Dolby Atmos", "4K Screen", "Snacks & Beverages"],
+    "movies": [1, 3],
+    "seatLayout": {
+      "rows": ["A", "B", "C", "D", "E"],
+      "cols": 10,
+      "vipRows": ["A"],
+      "priceMultiplier": { "A": 1.5, "B": 1.2, "C": 1, "D": 1, "E": 0.8 }
+    },
+    "contact": "040-22446688",
+    "email": "support@pvrcinemas.com"
+  },
+  {
+    "id": 102,
+    "name": "INOX Galleria",
+    "location": "Galleria Mall, Pune",
+    "city": "Pune",
+    "screens": 4,
+    "facilities": ["3D Screen", "AC Hall", "Food Court Access"],
+    "movies": [1, 2],
+    "seatLayout": {
+      "rows": ["A", "B", "C", "D", "E", "F"],
+      "cols": 12,
+      "vipRows": ["A", "B"],
+      "priceMultiplier": { "A": 1.6, "B": 1.3, "C": 1, "D": 1, "E": 0.8, "F": 0.7 }
+    },
+    "contact": "020-66778899",
+    "email": "info@inoxgalleria.com"
+  },
+  {
+    "id": 103,
+    "name": "Cinepolis Mall",
+    "location": "Forum Mall, Bengaluru",
+    "city": "Bengaluru",
+    "screens": 6,
+    "facilities": ["Luxury Recliners", "4DX", "Snacks & Beverages"],
+    "movies": [2, 3],
+    "seatLayout": {
+      "rows": ["A", "B", "C", "D", "E", "F", "G"],
+      "cols": 10,
+      "vipRows": ["A", "B"],
+      "priceMultiplier": { "A": 1.8, "B": 1.5, "C": 1.2, "D": 1, "E": 0.9, "F": 0.8, "G": 0.7 }
+    },
+    "contact": "080-33445566",
+    "email": "contact@cinepolis.com"
+  }
+]

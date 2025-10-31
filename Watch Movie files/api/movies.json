@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "title": "Avengers: Endgame",
+    "genre": "Action, Sci-Fi",
+    "rating": 4.8,
+    "duration": "3h 2m",
+    "language": "English",
+    "poster": "../assets/movies/avengers_endgame.jpg",
+    "banner": "../assets/banners/premier-banner.jpg",
+    "theatres": [101, 102],
+    "price": 250,
+    "showtimes": ["10:30 AM", "2:30 PM", "6:30 PM", "9:30 PM"]
+  },
+  {
+    "id": 2,
+    "title": "Leo",
+    "genre": "Action, Thriller",
+    "rating": 4.5,
+    "duration": "2h 45m",
+    "language": "Tamil",
+    "poster": "../assets/movies/leo.jpg",
+    "banner": "../assets/banners/movie_thriller.jpg",
+    "theatres": [102, 103],
+    "price": 220,
+    "showtimes": ["11:00 AM", "3:00 PM", "7:00 PM"]
+  },
+  {
+    "id": 3,
+    "title": "Inception",
+    "genre": "Sci-Fi, Mystery",
+    "rating": 4.9,
+    "duration": "2h 28m",
+    "language": "English",
+    "poster": "../assets/movies/inception.jpg",
+    "banner": "../assets/banners/premier-banner.jpg",
+    "theatres": [101, 103],
+    "price": 280,
+    "showtimes": ["12:00 PM", "4:00 PM", "8:00 PM"]
+  }
+]

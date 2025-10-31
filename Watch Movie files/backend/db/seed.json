@@ -1,0 +1,80 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "M Shanmukha Reddy",
+      "email": "shanmukhareddy9100@gmail.com",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "pass123",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "name": "Theatre Owner",
+      "email": "owner@cinema.com",
+      "password": "owner123",
+      "role": "owner"
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "title": "The Quantum Escape",
+      "genre": "Sci-Fi",
+      "duration": 120,
+      "language": "English",
+      "rating": 4.6,
+      "theatreId": 1
+    },
+    {
+      "id": 2,
+      "title": "Chasing Dreams",
+      "genre": "Drama",
+      "duration": 140,
+      "language": "Telugu",
+      "rating": 4.2,
+      "theatreId": 2
+    }
+  ],
+  "theatres": [
+    {
+      "id": 1,
+      "name": "Galaxy Cinemas",
+      "location": "Kondapur, Hyderabad",
+      "capacity": 180
+    },
+    {
+      "id": 2,
+      "name": "PVR Inorbit",
+      "location": "Hitech City, Hyderabad",
+      "capacity": 250
+    }
+  ],
+  "bookings": [
+    {
+      "id": 101,
+      "userId": 2,
+      "movieId": 1,
+      "seats": ["A1", "A2"],
+      "status": "confirmed",
+      "paymentId": "TXN20251030",
+      "date": "2025-10-31T08:00:00Z"
+    }
+  ],
+  "transactions": [
+    {
+      "transactionId": "TXN20251030",
+      "userId": 2,
+      "amount": 500,
+      "status": "success",
+      "method": "Credit Card",
+      "timestamp": "2025-10-31T08:00:00Z"
+    }
+  ]
+}
