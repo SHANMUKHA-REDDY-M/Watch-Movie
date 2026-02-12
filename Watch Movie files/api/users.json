@@ -3,21 +3,19 @@
     "id": 1,
     "name": "Admin",
     "email": "admin@watchmovies.com",
-    "password": "admin123",
     "role": "admin"
   },
   {
     "id": 2,
     "name": "Rahul Verma",
     "email": "rahul@gmail.com",
-    "password": "user123",
     "role": "user"
   },
   {
     "id": 3,
     "name": "CineMax Owner",
     "email": "owner@cinemax.com",
-    "password": "owner123",
-    "role": "owner"
+    "role": "owner",
+    "theatreIds": [103]
   }
 ]
