@@ -6,7 +6,6 @@
     "city": "Hyderabad",
     "screens": 5,
     "facilities": ["Dolby Atmos", "4K Screen", "Snacks & Beverages"],
-    "movies": [1, 3],
     "seatLayout": {
       "rows": ["A", "B", "C", "D", "E"],
       "cols": 10,
@@ -23,7 +22,6 @@
     "city": "Pune",
     "screens": 4,
     "facilities": ["3D Screen", "AC Hall", "Food Court Access"],
-    "movies": [1, 2],
     "seatLayout": {
       "rows": ["A", "B", "C", "D", "E", "F"],
       "cols": 12,
@@ -40,7 +38,6 @@
     "city": "Bengaluru",
     "screens": 6,
     "facilities": ["Luxury Recliners", "4DX", "Snacks & Beverages"],
-    "movies": [2, 3],
     "seatLayout": {
       "rows": ["A", "B", "C", "D", "E", "F", "G"],
       "cols": 10,
