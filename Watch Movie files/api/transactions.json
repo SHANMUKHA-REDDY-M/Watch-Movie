@@ -2,17 +2,17 @@
   {
     "id": "TXN789654",
     "bookingId": 1001,
-    "amount": 500,
+    "amount": 750,
     "method": "UPI",
-    "status": "Success",
+    "status": "success",
     "timestamp": "2025-11-01T12:10:00Z"
   },
   {
     "id": "TXN789655",
     "bookingId": 1002,
-    "amount": 280,
-    "method": "Credit Card",
-    "status": "Success",
+    "amount": 364,
+    "method": "credit_card",
+    "status": "success",
     "timestamp": "2025-11-03T09:40:00Z"
   }
 ]
